@@ -12,14 +12,15 @@ import javafx.stage.Stage;
 /**
  * Hello world!
  * How to Package: https://youtu.be/EyYb0GmtEX4
- * 
+ * VSCode and JavaFX: https://youtu.be/H67COH9F718
+ * Support to Run Java in Visual Studio: https://youtu.be/Rp1UZsPuO04
+ * VSCode Config for JavaFX: https://youtu.be/AubJaosfI-0
+ * VSCode and Java: https://youtu.be/eFa5NkFM0fg
  */
 
-public class App extends Application
-{
+ public class App extends Application {
     @Override
-    public void start(Stage primaryStage) throws Exception
-    {
+    public void start(Stage primaryStage) {
         Button btn = new Button();
         btn.setText("Say 'Hello World'");
         btn.setOnAction(new EventHandler<ActionEvent>() {
@@ -35,9 +36,7 @@ public class App extends Application
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-
     public static void main(String[] args) {
         launch(args);
     }
-
 }
