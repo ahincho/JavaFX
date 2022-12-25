@@ -11,11 +11,12 @@ public class DBConnection {
     // Puntero hacia la Instancia Singleton, inicialmente vacio
     private static Connection instance = null;
     // Driver que vamos a utilizar
-    private static final String driver = "com.mysql.jdbc.Driver";
+    // https://stackoverflow.com/questions/52032739/loading-class-com-mysql-jdbc-driver-this-is-deprecated-the-new-driver-class
+    private static final String driver = "com.mysql.cj.jdbc.Driver";
     // Usuario de la Base de Datos
     private static final String user = "root";
     // Contrasenia de la Base de Datos
-    private static final String password = "";
+    private static final String password = "ahincho";
     // Tipo de Base de Datos, Host, Puerto y Nombre
     private static final String url = "jdbc:mysql://localhost:3306/test";
 
@@ -46,9 +47,16 @@ public class DBConnection {
     }
 
     // Metodo para eliminar la conexion con la Base de Datos
-    public static void closeInstance()
+    public static int closeInstance()
     {
-        DBConnection.instance = null;
+        if (DBConnection.instance != null)
+        {
+            DBConnection.instance = null;
+            return 0;
+        }
+        else {
+            return -1;
+        }
     }
 
 }
