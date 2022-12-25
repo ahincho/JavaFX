@@ -37,7 +37,8 @@ public class DataBaseTest
     public void closeInstanceTest()
     {
         assertEquals(-1, DBConnection.closeInstance());
-        DBConnection.getInstance();
+        Connection c2 = DBConnection.getInstance();
+        assertNotNull(c2);
         assertEquals(0, DBConnection.closeInstance());
     }
 
